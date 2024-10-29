@@ -1,0 +1,23 @@
+@import './colors.scss';
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Lato';
+    font-weight: 400;
+    background-color: $c-cream-100;
+}
