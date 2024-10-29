@@ -39,6 +39,7 @@ export default tseslint.config(
       "prettier/prettier": [
             "error",
             {
+              endOfLine: 'auto',
               trailingComma: 'es5',
               singleQuote: true,
               semi: true,

@@ -1,0 +1,23 @@
+@use '../../../styles/colors.scss' as *;
+
+.submitBtn {
+    background: $c-blue-300;
+    color: $c-white;
+    border: 0.1rem solid $c-blue-300;
+    border-radius: 0.3rem;
+    box-shadow: 0 0.04rem 0.04px 0 #00000040;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 800;
+    height: 3rem;
+    padding: 0rem 1rem;
+    &:hover, &:active{
+        background-color: $c-white;
+        color: $c-blue-300;
+    }
+    &:active{
+        opacity: .5;
+    }
+  }
