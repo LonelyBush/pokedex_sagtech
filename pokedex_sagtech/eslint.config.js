@@ -48,6 +48,9 @@ export default tseslint.config(
               trailingComma: 'all',
             }
           ],
+      "@typescript-eslint/no-unsafe-assignment": 0,
+      "@typescript-eslint/no-unsafe-call": 0,
+      "@typescript-eslint/no-unsafe-member-access": 0,
     },
   },
 )

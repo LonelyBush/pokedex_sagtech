@@ -1,0 +1,101 @@
+@use '../../../styles/colors.scss' as *;
+
+.pokemonTypeContainer{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    & p{
+        margin:0;
+        margin-right: 0.2rem;
+    }
+}
+
+.typeIcon{
+    display: inline-block;
+    width: 45%;
+    background: #dbdbdb;
+    border: 1px solid #a3a3a3;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .7);
+    text-transform: uppercase;
+    transition: opacity .4s;
+}
+
+[data-bg='normal'] {
+    background-color: $c-type-normal;
+}
+
+[data-bg='fire']{
+    background-color: $c-type-fire;
+}
+
+[data-bg='water']{
+    background-color: $c-type-water;
+}
+
+[data-bg='electric'] {
+    background-color: $c-type-electric;
+}
+
+[data-bg='grass']{
+    background-color: $c-type-grass;
+}
+
+[data-bg='ice'] {
+    background-color: $c-type-ice;
+}
+
+[data-bg='fighting'] {
+    background-color: $c-type-fighting;
+}
+
+[data-bg='poison'] {
+    background-color: $c-type-poison;
+}
+
+[data-bg='ground'] {
+    background-color: $c-type-ground;
+}
+
+[data-bg='flying'] {
+    background-color: $c-type-flying;
+}
+
+[data-bg='psychic'] {
+    background-color: $c-type-psychic;
+}
+
+[data-bg='bug']{
+    background-color: $c-type-bug;
+}
+
+[data-bg='rock']{
+    background-color: $c-type-rock;
+}
+
+[data-bg='ghost']{
+    background-color: $c-type-ghost;
+}
+
+[data-bg='dragon']{
+    background-color: $c-type-dragon;
+}
+
+[data-bg='dark']{
+    background-color: $c-type-dark;
+}
+
+[data-bg='steel']{
+    background-color: $c-type-steel;
+}
+
+[data-bg='fairy']{
+    background-color: $c-type-fairy;
+}

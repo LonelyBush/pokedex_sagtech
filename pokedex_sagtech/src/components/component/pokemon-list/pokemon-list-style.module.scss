@@ -1,0 +1,13 @@
+.pokemonListContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    width: 100%;
+
+    &.loader-component{
+        transform: scale(0.7);
+        height: 40rem;
+    }
+}
