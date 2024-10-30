@@ -3,7 +3,7 @@ import { pokemonApi } from './rtk-reducer';
 import postsReducer from './favorites-reducer';
 
 const rootReducer = combineReducers({
-  pokeStore: postsReducer,
+  favoritesStore: postsReducer,
   [pokemonApi.reducerPath]: pokemonApi.reducer,
 });
 

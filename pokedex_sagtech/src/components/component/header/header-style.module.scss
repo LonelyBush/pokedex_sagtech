@@ -1,4 +1,10 @@
 .headerContainer{
     display: flex;
     gap: 1.5rem;
+    align-items: center;
+    & h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+
+    }
 }

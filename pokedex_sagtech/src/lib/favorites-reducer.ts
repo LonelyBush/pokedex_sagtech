@@ -1,18 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const initialState = [];
+interface PayloadInterface {
+  id: string;
+  poke_name: string;
+}
+
+const initialState: PayloadInterface[] = [];
 
 const postSlice = createSlice({
   name: 'favoritesStore',
   initialState,
   reducers: {
-    addPokemon: (state, action) => {
+    addPokemon: (state, action: PayloadAction<PayloadInterface>) => {
       state.push(action.payload);
       return state;
     },
     removePokemon: (state, action) => {
       return state.filter((elem) => {
-        return elem.name !== action.payload.name;
+        return elem.poke_name !== action.payload.poke_name;
       });
     },
     removeAllPokemons: () => {

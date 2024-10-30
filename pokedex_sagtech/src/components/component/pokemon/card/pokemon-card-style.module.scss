@@ -46,8 +46,8 @@
             cursor: pointer;
         }
         &.active{
-            background-color: var(--c-main-red);
-            border: 0.1rem solid var(--c-main-red);
+            background-color: $c-blue-300;
+            border: 0.1rem solid $c-blue-300;
             cursor: pointer;
         }
         &.pending {

@@ -1,0 +1,15 @@
+.favoritesSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.favoritesBlock{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    width: 100%;
+}
