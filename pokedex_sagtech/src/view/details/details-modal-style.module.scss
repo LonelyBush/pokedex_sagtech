@@ -1,0 +1,121 @@
+@use '../../styles/colors.scss' as *;
+
+.detailContainerOverlay{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $c-black-opacity-40; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0.5rem); 
+    z-index: 1000; 
+    transition: all 0.5s ease;
+}
+
+.itemContainer{
+    position: absolute;
+    top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: fit-content;
+    padding: 1rem;
+    box-shadow: 0 0.04rem 0.04px 0  $c-black-opacity-40;
+    border: 0.12rem solid $c-black-opacity-40;
+    background-color: $c-white;
+    border-radius: 0.5rem;
+    gap: 1.25rem;
+    z-index: 1001;
+}
+
+
+
+.headSection{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+
+    & h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        letter-spacing: .087rem;
+    }
+    & button {
+        position: absolute;
+        right: 0rem;
+    }
+
+}
+
+.contentSection{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pokeImgContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & img {
+        display: flex;
+        align-self: center;
+        max-width: 20rem;
+    }
+
+}
+
+.nameTypeContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.2rem;
+    text-align: start;
+    font-size: 1.2rem;
+
+    & h3 {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+}
+
+.pokemonType{
+    display: flex;
+    align-items: center;
+
+    & p:last-child{
+        margin: 0;
+        margin-top: 4px;
+    }
+
+    & p:first-child{
+        margin: 0;
+    }
+
+    span {
+        margin-right: 0.05rem;
+        margin-left: 0.05rem;
+    }
+}
+
+@media (max-width: 650px) {
+  .contentSection{
+    flex-direction: column;
+    gap: 1rem;
+}
+
+}
+
+@media (max-width: 420px){
+    .pokeImgContainer {
+        & img {
+            max-width: 17rem;  
+       }
+   }
+}

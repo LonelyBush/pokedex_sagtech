@@ -1,0 +1,19 @@
+@use '../../../styles/colors.scss' as *;
+
+.labelWrapper {
+    display: flex;
+    align-self: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    z-index: 0;
+  }
+
+  .starIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $c-black-opacity-40;
+    &.check {
+        color: $c-check;
+    }
+  }

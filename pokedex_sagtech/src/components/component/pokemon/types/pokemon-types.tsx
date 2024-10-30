@@ -1,4 +1,4 @@
-import { PokeType } from '../../../interfaces/pokeApi-interface';
+import { PokeType } from '../../../../interfaces/pokeApi-interface';
 import styles from './pokemon-types-style.module.scss';
 
 function PokemonTypes({ types }: { types: PokeType[] }) {

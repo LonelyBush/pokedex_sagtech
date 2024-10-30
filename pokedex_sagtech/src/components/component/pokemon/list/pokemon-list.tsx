@@ -1,5 +1,5 @@
-import { useGetAllPokemonsQuery } from '../../../lib/rtk-reducer';
-import PokemonCard from '../pokemon-card/pokemon-card';
+import { useGetAllPokemonsQuery } from '../../../../lib/rtk-reducer';
+import PokemonCard from '../card/pokemon-card';
 import styles from './pokemon-list-style.module.scss';
 
 function PokemonsList() {
@@ -13,8 +13,14 @@ function PokemonsList() {
     <div className={`${styles.pokemonListContainer}`}>
       {data && data.results.length === 0
         ? 'No Pokémon found.'
-        : data.results.map((elem: typeof data.results) => {
-            return <PokemonCard key={elem.url} poke_name={elem.name} />;
+        : data.results.map((elem: typeof data.results, index: number) => {
+            return (
+              <PokemonCard
+                key={elem.url}
+                id={`${index}`}
+                poke_name={elem.name}
+              />
+            );
           })}
     </div>
   );
