@@ -4,24 +4,29 @@ import DetailsModal from './view/details/details-modal';
 import ErrorBoundary from './components/component/error-boundary/error-boundary';
 import Favorites from './view/favorites/favorites';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Main />,
+      errorElement: <ErrorBoundary />,
+      children: [
+        {
+          path: 'details/:pokeName',
+          element: <DetailsModal />,
+        },
+      ],
+    },
+    {
+      path: '/favorites',
+      element: <Favorites />,
+      errorElement: <ErrorBoundary />,
+    },
+  ],
   {
-    path: '/',
-    element: <Main />,
-    errorElement: <ErrorBoundary />,
-    children: [
-      {
-        path: 'details/:pokeName',
-        element: <DetailsModal />,
-      },
-    ],
+    basename: '/pokedex_sagtech',
   },
-  {
-    path: '/favorites',
-    element: <Favorites />,
-    errorElement: <ErrorBoundary />,
-  },
-]);
+);
 
 function App() {
   return <RouterProvider router={router} />;
