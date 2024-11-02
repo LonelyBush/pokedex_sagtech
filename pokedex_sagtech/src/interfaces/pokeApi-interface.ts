@@ -1,6 +1,7 @@
 export interface Pokemon {
   name: string;
   url: string;
+  pokemon_types: string[];
 }
 
 export interface PokemonData {

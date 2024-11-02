@@ -13,7 +13,6 @@ const router = createBrowserRouter([
       {
         path: 'details/:pokeName',
         element: <DetailsModal />,
-        errorElement: <ErrorBoundary />,
       },
     ],
   },

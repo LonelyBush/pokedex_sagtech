@@ -1,19 +1,21 @@
-import { useGetAllPokemonsQuery } from '../../../../lib/rtk-reducer';
 import PokemonCard from '../card/pokemon-card';
 import styles from './pokemon-list-style.module.scss';
+import useInfiniteFetchScroll from '../../../../hooks/useInfiniteFetchScroll';
+import { Pokemon } from '../../../../interfaces/pokeApi-interface';
 
 function PokemonsList() {
-  const { data, isLoading, isError, error } = useGetAllPokemonsQuery('0');
+  const { pokemonList, isLoading, isError, error } = useInfiniteFetchScroll();
 
   if (isLoading) return <div>Loading...</div>;
-  if (isError)
+  if (isError) {
     return <div>Error loading Pokémon list: {JSON.stringify(error)}</div>;
+  }
 
   return (
     <div className={`${styles.pokemonListContainer}`}>
-      {data && data.results.length === 0
+      {pokemonList && pokemonList.length === 0
         ? 'No Pokémon found.'
-        : data.results.map((elem: typeof data.results, index: number) => {
+        : pokemonList.map((elem: Pokemon, index: number) => {
             return (
               <PokemonCard
                 key={elem.url}

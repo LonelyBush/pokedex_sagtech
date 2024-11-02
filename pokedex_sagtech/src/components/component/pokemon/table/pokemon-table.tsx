@@ -7,6 +7,7 @@ import {
 } from '../../../../interfaces/pokeApi-interface';
 import { useGetAbilityByNumberQuery } from '../../../../lib/rtk-reducer';
 import { FaRegCircleQuestion } from 'react-icons/fa6';
+import { capitalise } from '../../../../utils/capitalise';
 
 function PokemonTable({
   pokemonDetails,
@@ -37,9 +38,7 @@ function PokemonTable({
     const { name, flavor_text_entries } = data;
     descriptionBlock = (
       <div className={styles.abilityContentBlock}>
-        <p className={styles.abilityTitle}>
-          {name.charAt(0).toUpperCase() + name.slice(1)}
-        </p>
+        <p className={styles.abilityTitle}>{capitalise(name as string)}</p>
         <p className={styles.abilityDescription}>
           {flavor_text_entries !== undefined
             ? flavor_text_entries
@@ -69,10 +68,7 @@ function PokemonTable({
         {pokemonSpecies.shape !== null && (
           <div>
             Shape
-            <p>
-              {pokemonSpecies.shape.name.charAt(0).toUpperCase() +
-                pokemonSpecies.shape.name.slice(1)}
-            </p>
+            <p>{capitalise(pokemonSpecies.shape.name)}</p>
           </div>
         )}
 
@@ -84,8 +80,7 @@ function PokemonTable({
               onClick={() => handleOpenAbilityDetails(elem.ability.name)}
               key={elem.ability.name}
             >
-              {elem.ability.name.charAt(0).toUpperCase() +
-                elem.ability.name.slice(1)}
+              {capitalise(elem.ability.name)}
               <FaRegCircleQuestion />
             </p>
           ))}

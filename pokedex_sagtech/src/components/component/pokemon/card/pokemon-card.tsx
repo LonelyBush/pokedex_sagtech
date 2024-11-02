@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import style from './pokemon-card-style.module.scss';
 import pokeballStatic from '../../../../assets/pics/pokeball.png';
 import { useGetPokemonByNameQuery } from '../../../../lib/rtk-reducer';
@@ -9,11 +9,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../../lib/store';
 import { useDispatch } from 'react-redux';
 import { addPokemon, removePokemon } from '../../../../lib/favorites-reducer';
+import { capitalise } from '../../../../utils/capitalise';
 
 function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
   const store = useSelector((state: RootState) => state.favoritesStore);
   const dispatch = useDispatch();
-
+  const [searchParams] = useSearchParams();
   const { data, isLoading } = useGetPokemonByNameQuery(poke_name || '');
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -44,7 +45,7 @@ function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
       ) : (
         <>
           <NavLink
-            to={`/details/${data.name}`}
+            to={`/details/${data.name}?${searchParams}`}
             className={({ isActive, isPending }) =>
               isPending
                 ? `${style.pokemonCardContent} ${style.pending}`
@@ -61,7 +62,7 @@ function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
           </NavLink>
           <div className={`${style.nameTypesWrapper}`}>
             <div className={style.nameBlockWrapper}>
-              <p>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</p>
+              <p>{capitalise(data?.name as string)}</p>
               <CheckBox
                 onChange={HandleOnChange}
                 checked={checked}
