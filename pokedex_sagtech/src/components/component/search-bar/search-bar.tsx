@@ -24,13 +24,15 @@ function SearchBar() {
     <div className={style.searchBarWrapper}>
       <Form method="get" action="/" className={style.searchForm}>
         <Input
+          label="Name"
           name="search"
-          placeholder="Type pokemon name..."
+          placeholder="bulbasaur"
           value={searchQuery}
           onChange={handleInputChange}
           type="search"
         />
         <Select
+          label="Type"
           name="type"
           options={pokemonTypes}
           value={type}

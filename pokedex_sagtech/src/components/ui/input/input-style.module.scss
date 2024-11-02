@@ -1,5 +1,9 @@
 @use '../../../styles/colors.scss' as *;
 
+.labelWrapper{
+  width: 60%;
+}
+
 .formInput {
     display: flex;
     width: 100%;
@@ -16,4 +20,10 @@
     &:focus {
       border: 0.12rem solid $c-blue-300;
     }
+}
+
+@media(max-width: 730px){
+  .labelWrapper{
+      width: 100%;
+  }
 }

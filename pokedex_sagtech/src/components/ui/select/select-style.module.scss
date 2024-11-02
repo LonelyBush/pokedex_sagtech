@@ -1,4 +1,8 @@
 @use '../../../styles/colors.scss' as *;
+.labelWrapper{
+    width: 15rem;
+}
+
 
 .selectCustomStyle{
      display: flex;
@@ -16,4 +20,10 @@
         &:focus {
             border: 0.12rem solid $c-blue-300;
         }
+}
+
+@media(max-width: 730px){
+    .labelWrapper{
+        width: 100%;
+    }
 }

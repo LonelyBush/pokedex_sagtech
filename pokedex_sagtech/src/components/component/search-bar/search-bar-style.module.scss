@@ -6,4 +6,17 @@
 .searchForm{
     display: flex;
     gap: 1.5rem;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+@media(max-width: 730px){
+    .searchForm{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        justify-content: center;
+    }
 }

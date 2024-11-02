@@ -7,27 +7,32 @@ function Select({
   options,
   value,
   onChange,
+  label,
 }: {
+  label: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   options: string[];
   name: string;
 }) {
   return (
-    <select
-      onChange={onChange}
-      value={value}
-      name={name}
-      className={styles.selectCustomStyle}
-    >
-      {options.map((elem) => {
-        return (
-          <option key={elem} value={elem}>
-            {capitalise(elem)}
-          </option>
-        );
-      })}
-    </select>
+    <label htmlFor={name} className={styles.labelWrapper}>
+      {label}
+      <select
+        onChange={onChange}
+        value={value}
+        name={name}
+        className={styles.selectCustomStyle}
+      >
+        {options.map((elem) => {
+          return (
+            <option key={elem} value={elem}>
+              {capitalise(elem)}
+            </option>
+          );
+        })}
+      </select>
+    </label>
   );
 }
 export default Select;

@@ -11,6 +11,7 @@ function Header() {
     <header className={styles.headerContainer}>
       <h2>Pokedex-app</h2>
       <Link
+        className={styles.linkStyles}
         to={`/favorites?${searchParams}`}
       >{`Favorites pokémons: ${store.length}`}</Link>
     </header>

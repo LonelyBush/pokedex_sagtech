@@ -7,7 +7,9 @@ function Input({
   placeholder,
   value,
   onChange,
+  label,
 }: {
+  label: string;
   type: string;
   name: string;
   value: string;
@@ -15,14 +17,17 @@ function Input({
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }) {
   return (
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      className={style.formInput}
-    />
+    <label htmlFor={name} className={style.labelWrapper}>
+      {label}
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={style.formInput}
+      />
+    </label>
   );
 }
 
