@@ -1,0 +1,17 @@
+.loadingPropImg{
+    justify-self: center;
+    align-self: center;
+    width: 10rem;
+    height: 10rem;
+    animation: spin 1s infinite linear;
+}
+
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

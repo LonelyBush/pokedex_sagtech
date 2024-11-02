@@ -2,11 +2,12 @@ import PokemonCard from '../card/pokemon-card';
 import styles from './pokemon-list-style.module.scss';
 import useInfiniteFetchScroll from '../../../../hooks/useInfiniteFetchScroll';
 import { Pokemon } from '../../../../interfaces/pokeApi-interface';
+import Loader from '../../loader/loader';
 
 function PokemonsList() {
   const { pokemonList, isLoading, isError, error } = useInfiniteFetchScroll();
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader />;
   if (isError) {
     return <div>Error loading Pokémon list: {JSON.stringify(error)}</div>;
   }

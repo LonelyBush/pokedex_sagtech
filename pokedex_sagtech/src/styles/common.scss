@@ -20,6 +20,9 @@ body {
 }
 
 #root{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: 80%;
     margin: 1rem 2rem;
 }

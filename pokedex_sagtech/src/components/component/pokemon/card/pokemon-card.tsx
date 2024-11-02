@@ -1,6 +1,5 @@
 import { NavLink, useSearchParams } from 'react-router-dom';
 import style from './pokemon-card-style.module.scss';
-import pokeballStatic from '../../../../assets/pics/pokeball.png';
 import { useGetPokemonByNameQuery } from '../../../../lib/rtk-reducer';
 import PokemonTypes from '../types/pokemon-types';
 import CheckBox from '../../../ui/check-box/check-box';
@@ -10,6 +9,7 @@ import { RootState } from '../../../../lib/store';
 import { useDispatch } from 'react-redux';
 import { addPokemon, removePokemon } from '../../../../lib/favorites-reducer';
 import { capitalise } from '../../../../utils/capitalise';
+import Loader from '../../loader/loader';
 
 function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
   const store = useSelector((state: RootState) => state.favoritesStore);
@@ -26,7 +26,6 @@ function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
         : removePokemon({ id, poke_name }),
     );
   };
-
   useEffect(() => {
     if (data) {
       setChecked(
@@ -37,11 +36,7 @@ function PokemonCard({ id, poke_name }: { id: string; poke_name: string }) {
   return (
     <div className={style.pokemonCardContainer}>
       {isLoading ? (
-        <img
-          className={style.loadingPropImg}
-          src={pokeballStatic}
-          alt="pokeball"
-        />
+        <Loader />
       ) : (
         <>
           <NavLink

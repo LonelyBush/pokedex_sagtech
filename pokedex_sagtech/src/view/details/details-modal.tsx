@@ -10,6 +10,7 @@ import PokemonStats from '../../components/component/pokemon/stats/pokemon-stats
 import PokemonFlavorText from '../../components/component/pokemon/flavor-text/pokemon-flavor';
 import PokemonTable from '../../components/component/pokemon/table/pokemon-table';
 import { capitalise } from '../../utils/capitalise';
+import Loader from '../../components/component/loader/loader';
 
 function DetailsModal() {
   const [searchParams] = useSearchParams();
@@ -28,7 +29,7 @@ function DetailsModal() {
   return (
     <div id="details" className={`${styles.detailContainerOverlay}`}>
       {pokemon_species.isLoading ? (
-        'Loading...'
+        <Loader />
       ) : (
         <div className={`${styles.itemContainer}`}>
           <div className={styles.headSection}>

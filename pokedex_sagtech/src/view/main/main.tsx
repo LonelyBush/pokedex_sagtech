@@ -5,12 +5,12 @@ import SearchBar from '../../components/component/search-bar/search-bar';
 
 function Main() {
   return (
-    <div>
+    <>
       <Header />
       <SearchBar />
       <PokemonsList />
       <Outlet />
-    </div>
+    </>
   );
 }
 
