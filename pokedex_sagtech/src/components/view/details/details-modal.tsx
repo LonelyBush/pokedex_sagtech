@@ -3,14 +3,14 @@ import styles from './details-modal-style.module.scss';
 import {
   useGetPokemonByNameQuery,
   useGetPokemonSpeciesByNameQuery,
-} from '../../lib/rtk-reducer';
-import CloseBtn from '../../components/ui/close-btn/close-btn';
-import PokemonTypes from '../../components/component/pokemon/types/pokemon-types';
-import PokemonStats from '../../components/component/pokemon/stats/pokemon-stats';
-import PokemonFlavorText from '../../components/component/pokemon/flavor-text/pokemon-flavor';
-import PokemonTable from '../../components/component/pokemon/table/pokemon-table';
-import { capitalise } from '../../utils/capitalise';
-import Loader from '../../components/component/loader/loader';
+} from '../../../lib/rtk-reducer';
+import CloseBtn from '../../ui/close-btn/close-btn';
+import PokemonTypes from '../../component/pokemon/types/pokemon-types';
+import PokemonStats from '../../component/pokemon/stats/pokemon-stats';
+import PokemonFlavorText from '../../component/pokemon/flavor-text/pokemon-flavor';
+import PokemonTable from '../../component/pokemon/table/pokemon-table';
+import { capitalise } from '../../../utils/capitalise';
+import Loader from '../../component/loader/loader';
 
 function DetailsModal() {
   const [searchParams] = useSearchParams();

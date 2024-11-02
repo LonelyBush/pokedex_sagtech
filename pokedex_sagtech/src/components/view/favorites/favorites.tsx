@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../lib/store';
-import PokemonCard from '../../components/component/pokemon/card/pokemon-card';
+import { RootState } from '../../../lib/store';
+import PokemonCard from '../../component/pokemon/card/pokemon-card';
 import styles from './favorites-style.module.scss';
-import Button from '../../components/ui/button/button';
+import Button from '../../ui/button/button';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 function Favorites() {

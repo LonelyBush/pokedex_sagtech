@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './view/main/main';
-import DetailsModal from './view/details/details-modal';
+import Main from './components/view/main/main';
+import DetailsModal from './components/view/details/details-modal';
 import ErrorBoundary from './components/component/error-boundary/error-boundary';
-import Favorites from './view/favorites/favorites';
+import Favorites from './components/view/favorites/favorites';
 
 const router = createBrowserRouter(
   [

@@ -32,7 +32,7 @@ function ErrorBoundary() {
     <div className={styles.errorPageContainer}>
       <h2>Oh no... Something is wrong</h2>
       <img src={shroomish} alt="sad-shromish-pic" />
-      <h2>Unknown Error</h2>
+      <h2>Please restart a page!</h2>
     </div>
   );
 }

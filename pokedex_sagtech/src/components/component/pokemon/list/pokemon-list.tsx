@@ -3,13 +3,14 @@ import styles from './pokemon-list-style.module.scss';
 import useInfiniteFetchScroll from '../../../../hooks/useInfiniteFetchScroll';
 import { Pokemon } from '../../../../interfaces/pokeApi-interface';
 import Loader from '../../loader/loader';
+import ErrorBoundary from '../../error-boundary/error-boundary';
 
 function PokemonsList() {
-  const { pokemonList, isLoading, isError, error } = useInfiniteFetchScroll();
+  const { pokemonList, isLoading, isError } = useInfiniteFetchScroll();
 
   if (isLoading) return <Loader />;
   if (isError) {
-    return <div>Error loading Pokémon list: {JSON.stringify(error)}</div>;
+    return <ErrorBoundary />;
   }
 
   return (
